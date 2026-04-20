@@ -1,67 +1,45 @@
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { motion } from "framer-motion";
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+    margin: 0;
+    padding: 0;
+}
 
-export default function BancoHome() {
-  return (
-    <div className="min-h-screen bg-gray-50 flex flex-col">
-      {/* Navbar */}
-      <header className="flex justify-between items-center p-6 bg-white shadow">
-        <h1 className="text-2xl font-bold">BancoSeguro</h1>
-        <nav className="space-x-4">
-          <Button variant="ghost">Inicio</Button>
-          <Button variant="ghost">Servicios</Button>
-          <Button variant="ghost">Contacto</Button>
-          <Button>Iniciar Sesión</Button>
-        </nav>
-      </header>
+.container {
+    text-align: center;
+    background: white;
+    padding: 30px;
+    margin: 50px auto;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 15px;
+    box-shadow: 0px 10px 25px rgba(0,0,0,0.2);
+}
 
-      {/* Hero */}
-      <section className="flex flex-col items-center justify-center text-center p-10">
-        <motion.h2
-          className="text-4xl font-bold mb-4"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-        >
-          Tu banco digital de confianza
-        </motion.h2>
-        <p className="text-lg text-gray-600 mb-6">
-          Administra tu dinero de forma segura, rápida y sencilla desde cualquier lugar.
-        </p>
-        <Button className="text-lg px-6 py-3">Crear Cuenta</Button>
-      </section>
+header h1 {
+    color: #333;
+}
 
-      {/* Login Card */}
-      <section className="flex justify-center p-6">
-        <Card className="w-full max-w-md shadow-lg rounded-2xl">
-          <CardContent className="p-6 space-y-4">
-            <h3 className="text-xl font-semibold text-center">Acceso a tu cuenta</h3>
-            <Input placeholder="Correo electrónico" />
-            <Input placeholder="Contraseña" type="password" />
-            <Button className="w-full">Ingresar</Button>
-          </CardContent>
-        </Card>
-      </section>
+.icon {
+    width: 120px;
+    margin: 20px 0;
+}
 
-      {/* Services */}
-      <section className="grid grid-cols-1 md:grid-cols-3 gap-6 p-10">
-        {["Transferencias", "Pagos", "Ahorros"].map((servicio, index) => (
-          <Card key={index} className="rounded-2xl shadow">
-            <CardContent className="p-6 text-center">
-              <h4 className="text-xl font-semibold mb-2">{servicio}</h4>
-              <p className="text-gray-600">
-                Gestiona tus {servicio.toLowerCase()} de manera rápida y segura.
-              </p>
-            </CardContent>
-          </Card>
-        ))}
-      </section>
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
 
-      {/* Footer */}
-      <footer className="bg-white text-center p-4 mt-auto shadow">
-        <p className="text-gray-500">© 2026 BancoSeguro. Todos los derechos reservados.</p>
-      </footer>
-    </div>
-  );
+button:hover {
+    background-color: #45a049;
+}
+
+footer {
+    margin-top: 20px;
+    color: #777;
 }
